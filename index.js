@@ -19,7 +19,7 @@ app.use(morgan('dev'));
 app.use(express.static(__dirname + '/public')); 
 
 /*** REST API support for /dishes ***/
-/*app.all('/dishes', (req,res,next) => {
+app.all('/dishes', (req,res,next) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
   next();
@@ -43,7 +43,7 @@ app.delete('/dishes', (req, res, next) => {
 });
 
 
-** REST API support for /dishId **
+/** REST API support for /dishId **/
 app.get('/dishes/:dishId', (req,res,next) => {
     res.end('Will send details of the dish: ' + req.params.dishId +' to you!');
 });
@@ -61,7 +61,7 @@ app.put('/dishes/:dishId', (req, res, next) => {
 
 app.delete('/dishes/:dishId', (req, res, next) => {
     res.end('Deleting dish: ' + req.params.dishId);
-});*/
+});
 
 app.use((req, res, next) => {
   res.statusCode = 200;
